@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Link Shortener</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="all" href="../css/styles.css" th:href="@{/css/styles.css}" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <div class="window">
+        <form th:action="@{/shortened-link}" method="post">
+            <h4>Paste the URL to shorten:</h4>
+            <input type="url" id="url" name="urlToShorten" pattern="https://.*" required>
+            <br>
+            <br>
+            <input type="submit" class="btn btn-primary"  value="Shorten link">
+            <br>
+            <br>
+            <h4>Your shortened link:</h4>
+            <input id="shortenedLink" type="text" name="shortenedLink" readonly th:value="${shortenedLink}">
+            <br>
+            <br>
+            <input id="copyButton" class="btn btn-primary" type="button" value="Copy to clipboard">
+            <br>
+            <br>
+            <input type="button" class="btn btn-primary" value="Show QR Code" onclick="showQr();">
+            <br>
+            <img id="qrcode" th:src="${qrcBase + shortenedLink}" th:alt="${shortenedLink}" style="visibility: hidden"/>
+            <br><br>
+        </form>
+    </div>
+</div>
+<script type="text/javascript" th:src="@{/scripts/scripts.js}"></script>
+</body>
+</html>

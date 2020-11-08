@@ -1,0 +1,23 @@
+html,body{
+    background: rgb(95,176,198);
+    background: linear-gradient(0deg, rgba(95,176,198,0.989233193277311) 53%, rgba(141,173,182,0.9192051820728291) 100%);
+    margin: 0;
+    height: 100%;
+}
+#qrcode{
+    padding-top: 20px;
+}
+.window{
+    background-color: white;
+    padding: 20px;
+    border-radius: 25px;
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.wrapper{
+    padding-top: 50px;
+}
